@@ -37,7 +37,7 @@ const Cart = () => {
             className=" rounded-2xl text-white bg-red-800 hover:bg-red-700 my-2 px-2 py-1"
             onClick={toggleCartModal}
           >
-            Close Cart
+            Close
           </button>
         </div>
       </div>

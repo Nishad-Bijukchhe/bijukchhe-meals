@@ -1,5 +1,8 @@
 import Header from "../components/Header/Header";
 import "./globals.css";
+import FoodBanner from "@/assets/images/food_landscape.jpg"
+import Image  from 'next/image'
+
 export const metadata = {
   title: "Bijukchhe Meals",
   description:
@@ -13,9 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="bg-gray-900">
         <Header />
-        <main>{children}</main>
+        {/* <img src="../assets/images/food_landscape.jpg" alt="food image"/>
+        <img src={FoodBanner.src} alt="food image" /> */}
+        <Image src={FoodBanner} alt="food image" className="w-full h-40 sm:h-80"/>
+        <div className="bg-gray-900">{children}</div>
       </body>
     </html>
   );

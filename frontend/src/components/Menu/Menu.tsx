@@ -3,7 +3,26 @@ import Card from "@/components/ui/Card/Card";
 import menu from "@/services/menu";
 import Counter from "@/components/Counter/Counter";
 
-function Menu() {
+interface ForecastItem{
+  date: Date,
+  temperatureC: number,
+  summary: string,
+  temperatureF: number,
+}
+
+const Menu = async () => {
+  let data = await fetch("http://localhost:5037/weatherforecast");
+  let forecast = await data.json();
+  // console.log("Hello from MENU!", forecast)
+  forecast.map((item: ForecastItem) => {
+    console.log("id: ", item.summary)
+  })
+  // const page = async () => {
+  //   let data = await fetch("http://localhost:5037/weatherforecast");
+  //   let forecast = await data.json();
+  //   console.log(forecast);
+  // }
+
   return (
       <Card className=" bg-white">
         {menu.map((item) => {
